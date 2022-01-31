@@ -4,7 +4,7 @@ const router = express.Router()
 
 //Create requests GET / POST
 router.get('/login', (req, res) => {
-    res.send('login')
+    res.render('login')
 })
 router.get('/signup', (req, res) => {
     res.send('signup')
