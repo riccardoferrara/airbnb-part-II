@@ -3,13 +3,6 @@ const express = require('express')
 const router = express.Router()
 const Users = require('../models/users')
 
-
-//functions 
-const createUser = async(user) => {
-    let users = await Users.create(user)
-    return true
-}
-
 //Create requests GET / POST
 router.get('/login', (req, res) => {
     res.render('login')
@@ -25,14 +18,20 @@ router.post('/login', (req, res) => {
 
 router.post('/signup', async(req, res) => {
     let user = req.body
-    let created = await createUser(user)
-    res.send('signed up')
-        // if (created) {
-        //     req.login({
-        //         email: 'tony@gmail.com',
-        //         password: '123456'
-        //     })
-        // }
+    Users.findOne({
+        'email': user.email
+    }, async function(err, exist) {
+        // hanlde err..
+        // IF THE USER ALREADY EXISTS
+        if (exist) {
+            console.log('user exists!')
+        } else
+        // IF THE USER DO NOT EXISTS
+        {
+            let users = await Users.create(user)
+            console.log('user created!')
+        }
+    })
 })
 
 router.get('/logout', (req, res) => {
