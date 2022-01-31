@@ -3,7 +3,7 @@ const express = require('express')
 const router = express.Router()
 
 //Create requests GET / POST
-router.get('/', (req, res) => {
+router.post('/', (req, res) => {
     res.send('bookings')
 })
 
