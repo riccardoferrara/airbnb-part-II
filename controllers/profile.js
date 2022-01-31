@@ -4,7 +4,7 @@ const router = express.Router()
 
 //Create requests GET / POST
 router.get('/', (req, res) => {
-    res.send('profile')
+    res.render('profile')
 })
 router.patch('/', (req, res) => {
     res.send('profile')
