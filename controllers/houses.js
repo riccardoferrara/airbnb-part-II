@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
     res.send('houses')
 })
 router.get('/create', (req, res) => {
-    res.send('houses')
+    res.render('houses/create')
 })
 router.get('/:id', (req, res) => {
     res.send('houses')

@@ -1,0 +1,67 @@
+ <!-- header -->
+    <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light bg-white">
+            <div class="container">
+                <img class="logo" src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1642399114/portal/web%20development%20beginners/05%20Project%20Airbnb/assets/logo-airbnb.png">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    </ul>
+                    <form class="d-flex gap-3">
+                        <button class="btn btn-outline-success" type="submit">
+                            <img src="https://randomuser.me/api/portraits/men/11.jpg" class="rounded-circle" style="height: 20px;">
+                            Riccardo Ferrara
+                        </button>
+                        <button class="btn btn-outline-success" type="submit">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- end header -->
+    <div class="container mb-xl-5">
+        <h1>List a house</h1>
+        <form>
+            <div class="mb-3">
+                <label class="form-label mb-0">Short title</label>
+                <input type="text" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label mb-0">Description</label>
+                <textarea class="form-control" rows="6" required minlength="100"></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label mb-0">Number of rooms</label>
+                <input type="number" class="form-control" required min="2" max="50">
+            </div>
+            <div class="mb-3">
+                <label class="form-label mb-0">Location</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Palermo</option>
+                    <option value="1">Koh Samui</option>
+                    <option value="2">Koh Phangan</option>
+                  </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label mb-0">Price (per night)</label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">$</span>
+                    <input type="number" class="form-control" required min="1">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label mb-0">Add Photos (up to 9)</label>
+                <input type="url" class="form-control mb-1" placeholder="https://..." required>
+                <input type="url" class="form-control mb-1" placeholder="https://...">
+                <input type="url" class="form-control mb-1" placeholder="https://...">
+                <input type="url" class="form-control mb-1" placeholder="https://...">
+                <input type="url" class="form-control mb-1" placeholder="https://...">
+                <input type="url" class="form-control mb-1" placeholder="https://...">
+                <input type="url" class="form-control mb-1" placeholder="https://...">
+                <input type="url" class="form-control mb-1" placeholder="https://...">
+                <input type="url" class="form-control mb-1" placeholder="https://...">
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Submit</button>
+            </div>
+        </form>
+    </div>
