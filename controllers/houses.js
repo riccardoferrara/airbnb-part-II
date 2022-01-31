@@ -13,7 +13,7 @@ router.get('/:id', (req, res) => {
     res.send('houses')
 })
 router.get('/:id/edit', (req, res) => {
-    res.send('houses')
+    res.send('houses/edit')
 })
 router.post('/', (req, res) => {
     res.send('houses')
