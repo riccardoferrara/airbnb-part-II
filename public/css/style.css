@@ -1,0 +1,86 @@
+    .logo {
+        height: 30px;
+    }
+    
+    .house_pics {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 50vh;
+        border: lightgray solid 1px;
+    }
+    
+    .avatar_img {
+        height: 4rem;
+        width: 4rem;
+        background-size: cover;
+    }
+    
+    .send_message {
+        border: 1px solid lightgray;
+        box-shadow: 1px 5px 20px rgba(168, 168, 168, 0.5);
+        padding: 12px;
+    }
+    
+    .host_avatar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: min-content;
+        white-space: nowrap;
+    }
+    
+    .review {
+        border: solid 1px lightgray;
+    }
+    /* login */
+    
+    .bg_image {
+        height: 100vh;
+        background-size: cover;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+    }
+    
+    .login_card {
+        width: 40vh;
+        background-color: rgb(250, 249, 249);
+        box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.5);
+        padding: 12px;
+    }
+    
+    .signup_card {
+        width: 70vh;
+        background-color: rgb(250, 249, 249);
+        box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.5);
+        padding: 12px;
+    }
+    
+    .center {
+        display: block;
+        margin: auto;
+    }
+    
+    .btn-success {
+        background-color: #008080;
+    }
+    
+    .btn-success:hover {
+        background-color: #008080;
+    }
+    
+    .btn-outline-success {
+        color: #008080;
+        border-color: #008080;
+    }
+    
+    .btn-outline-success:hover {
+        background-color: #008080;
+    }
+    
+    .green {
+        color: #008080;
+    }
+    
+    .cover {
+        background-size: cover;
+    }
