@@ -1,2 +1,25 @@
-{{message}}
-{{error.stack}}
+<div class="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light bg-white">
+        <div class="container">
+            <img class="logo" src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1642399114/portal/web%20development%20beginners/05%20Project%20Airbnb/assets/logo-airbnb.png">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                </ul>
+                <form class="d-flex gap-3">
+                    <button class="btn btn-outline-secondary" type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- end header -->
+<!-- start error message -->
+<div class="container mt-3">
+    <div class="alert alert-danger">
+        {{message}}
+    </div>
+    <div class="error_message">
+        {{error.stack}}
+    </div>
+</div>
+<!-- end error message -->
