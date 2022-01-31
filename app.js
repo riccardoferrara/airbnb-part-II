@@ -47,7 +47,7 @@ require('./express-sessions')(app)
 app.use('/', require('./controllers/index'))
 app.use('/auth', require('./controllers/auth'))
 app.use('/bookings', require('./controllers/bookings'))
-    // app.use('/houses', require('./controllers/houses'))
+app.use('/houses', require('./controllers/houses'))
     // app.use('/profile', require('./controllers/profile'))
     // app.use('/reviews', require('./controllers/reviews'))
 
