@@ -1,61 +1,44 @@
 <!-- header -->
-    <div class="header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light white">
-            <div class="container">
-                <img class="logo" src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1642399114/portal/web%20development%20beginners/05%20Project%20Airbnb/assets/logo-airbnb.png">
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    </ul>
-                    <form class="d-flex gap-3">
-                        <button class="btn btn-outline-success" type="submit">
-                          <img src="https://randomuser.me/api/portraits/men/11.jpg" class="rounded-circle" style="height: 20px;">
-                          Riccardo Ferrara
-                        </button>
-                        <button class="btn btn-outline-success" type="submit">Logout</button>
-                    </form>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <!-- end header -->
-    <!-- starat profile  -->
-    <div class="container mt-4">
-        <div class="row gap-xxl-5">
-            <div class="col-3">
-                <h1>Profile</h1>
-                <hr>
-                <form>
-                    <div class="mb-3">
-                        <label class="form-label mb-0">Name</label>
-                        <input type="text" class="form-control" value="Riccardo Ferrara">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label mb-0">Email</label>
-                        <input type="email" class="form-control" value="riccardo85ferrara@gmail.com">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label mb-2">Profile Picture</label>
-                        <div class="avatar_img circular--square mb-2" style="background-image: url('https://randomuser.me/api/portraits/men/11.jpg');">
-                        </div>
-                        <input type="url" class="form-control" value="https://randomuser.me/api/portraits/meciaocomestai.png">
-                    </div>
-                    <div class="mb-3">
-                        <button class="btn btn-success mt-1">Save Changes</button>
-                    </div>
-                </form>
-            </div>
-            <div class="col">
-                <h1>
-                    My Listing
-                </h1>
-                <hr>
+{{> nav}}
+<!-- end header -->
+<!-- starat profile  -->
+<div class="container mt-4">
+    <div class="row gap-xxl-5">
+        <div class="col-3">
+            <h1>Profile</h1>
+            <hr>
+            <form>
                 <div class="mb-3">
-                    <button class="btn btn-success mt-1">List a House</button>
+                    <label class="form-label mb-0">Name</label>
+                    <input type="text" class="form-control" value="Riccardo Ferrara">
                 </div>
                 <div class="mb-3">
-                    <input type="text" class="form-control" value="You doon't have any houses listed">
+                    <label class="form-label mb-0">Email</label>
+                    <input type="email" class="form-control" value="riccardo85ferrara@gmail.com">
                 </div>
+                <div class="mb-3">
+                    <label class="form-label mb-2">Profile Picture</label>
+                    <div class="avatar_img circular--square mb-2" style="background-image: url('https://randomuser.me/api/portraits/men/11.jpg');">
+                    </div>
+                    <input type="url" class="form-control" value="https://randomuser.me/api/portraits/meciaocomestai.png">
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-success mt-1">Save Changes</button>
+                </div>
+            </form>
+        </div>
+        <div class="col">
+            <h1>
+                My Listing
+            </h1>
+            <hr>
+            <div class="mb-3">
+                <button class="btn btn-success mt-1">List a House</button>
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" value="You doon't have any houses listed">
             </div>
         </div>
     </div>
-    <!-- end profile -->
+</div>
+<!-- end profile -->
