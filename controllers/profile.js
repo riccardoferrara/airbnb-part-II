@@ -6,5 +6,8 @@ const router = express.Router()
 router.get('/', (req, res) => {
     res.send('profile')
 })
+router.patch('/', (req, res) => {
+    res.send('profile')
+})
 
 module.exports = router
