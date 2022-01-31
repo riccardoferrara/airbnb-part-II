@@ -4,7 +4,7 @@ const router = express.Router()
 
 //Create requests GET / POST
 router.get('/', (req, res) => {
-    res.send('houses')
+    res.render('houses/list')
 })
 router.get('/create', (req, res) => {
     res.render('houses/create')
@@ -13,10 +13,10 @@ router.get('/:id', (req, res) => {
     res.send('houses')
 })
 router.get('/:id/edit', (req, res) => {
-    res.send('houses/edit')
+    res.render('houses/edit')
 })
 router.post('/', (req, res) => {
-    res.send('houses')
+    res.render('houses/list')
 })
 router.patch('/:id', (req, res) => {
     res.send('houses')
