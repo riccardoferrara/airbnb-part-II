@@ -29,8 +29,17 @@ router.post('/signup', async(req, res, next) => {
             } else
             // IF THE USER DO NOT EXISTS
             {
+                // create the user
                 let users = await Users.create(user)
                 console.log('user created!')
+                    //login
+                req.login(user, (err) => {
+                    if (err) { throw err } else {
+                        console.log('logged in!')
+                        res.redirect('/houses')
+                    }
+                })
+
             }
         } catch (err) {
             next(err)
