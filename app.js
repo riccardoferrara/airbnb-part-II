@@ -34,17 +34,22 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 // Database
 mongoose.connect(
-  process.env.MONGODB_URL,
-  { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false },
-  () => {
-    console.log('Connected to MongoDB')
-  }
+    process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false },
+    () => {
+        console.log('Connected to MongoDB')
+    }
 )
 
 // Security
 require('./express-sessions')(app)
 
 // Routes
+app.use('/', require('./controllers/index'))
+    // app.use('/auth', require('./controllers/auth'))
+    // app.use('/bookings', require('./controllers/bookings'))
+    // app.use('/houses', require('./controllers/houses'))
+    // app.use('/profile', require('./controllers/profile'))
+    // app.use('/reviews', require('./controllers/reviews'))
 
 // ::::
 // Create your routes here
@@ -52,19 +57,19 @@ require('./express-sessions')(app)
 
 // Catch 404 and forward to error handler
 app.use((req, res, next) => {
-  next(createError(404))
+    next(createError(404))
 })
 
 // Error Handler
 app.use((err, req, res, next) => {
-  // Only provides full error in development
-  res.locals.message = err.message
-  res.locals.error = req.app.get('env') === 'development' ? err : {}
-  res.locals.coder = req.coder
-  res.locals.hideSearch = true
-  // Render the error page
-  res.status(err.status || 500)
-  res.render('error')
+    // Only provides full error in development
+    res.locals.message = err.message
+    res.locals.error = req.app.get('env') === 'development' ? err : {}
+    res.locals.coder = req.coder
+    res.locals.hideSearch = true
+        // Render the error page
+    res.status(err.status || 500)
+    res.render('error')
 })
 
 module.exports = app
