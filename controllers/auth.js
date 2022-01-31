@@ -16,23 +16,29 @@ router.post('/login', (req, res) => {
     res.send('login')
 })
 
-router.post('/signup', async(req, res) => {
+router.post('/signup', async(req, res, next) => {
     let user = req.body
     Users.findOne({
         'email': user.email
     }, async function(err, exist) {
-        // hanlde err..
-        // IF THE USER ALREADY EXISTS
-        if (exist) {
-            console.log('user exists!')
-        } else
-        // IF THE USER DO NOT EXISTS
-        {
-            let users = await Users.create(user)
-            console.log('user created!')
+        try {
+            // hanlde err..
+            // IF THE USER ALREADY EXISTS
+            if (exist) {
+                throw new Error('A user with this email is already registered')
+            } else
+            // IF THE USER DO NOT EXISTS
+            {
+                let users = await Users.create(user)
+                console.log('user created!')
+            }
+        } catch (err) {
+            next(err)
         }
     })
+
 })
+
 
 router.get('/logout', (req, res) => {
     res.send('logout')
