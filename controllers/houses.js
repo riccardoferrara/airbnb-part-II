@@ -10,7 +10,7 @@ router.get('/create', (req, res) => {
     res.render('houses/create')
 })
 router.get('/:id', (req, res) => {
-    res.send('houses')
+    res.send('houses/one')
 })
 router.get('/:id/edit', (req, res) => {
     res.render('houses/edit')
