@@ -34,8 +34,11 @@ router.post('/signup', async(req, res, next) => {
                 console.log('user created!')
                     //login
                 req.login(user, (err) => {
-                    if (err) { throw err } else {
+                    if (err) {
+                        throw err
+                    } else {
                         console.log('logged in!')
+                            // after login go to the houses list page
                         res.redirect('/houses')
                     }
                 })
