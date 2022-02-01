@@ -4,6 +4,16 @@ const router = express.Router()
 const Users = require('../models/users')
 
 //Create requests GET / POST
+// // TEMPLATE FOR ALL REQUESTS:
+// router.get('/', async (req, res, next) => {
+//     try {
+
+//     } catch (err) {
+//         next(err)
+//     }
+// })
+
+
 router.get('/login', (req, res) => {
     res.render('login')
 })
