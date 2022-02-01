@@ -6,8 +6,14 @@ const router = express.Router()
 router.get('/', (req, res) => {
     res.render('houses/list')
 })
-router.get('/create', (req, res) => {
-    res.render('houses/create')
+router.get('/create', (req, res, next) => {
+    try {
+        if (!req.isAuthenticated()) {
+            res.render('auth/login')
+        } else {
+            res.render('houses/create')
+        }
+    } catch (err) { next(err) }
 })
 router.get('/:id', (req, res) => {
     res.send('houses/one')
