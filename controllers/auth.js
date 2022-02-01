@@ -56,6 +56,7 @@ router.post('/signup', async(req, res, next) => {
 
 
 router.get('/logout', (req, res) => {
+    console.log('user logging out')
     res.send('logout')
 })
 
