@@ -23,17 +23,26 @@ router.get('/signup', (req, res) => {
 })
 
 router.post('/login', async(req, res, next) => {
-    console.log('login session starts')
-    let user = await req.body
-    req.login(user, (err) => {
-        if (err) {
-            throw err
+    try {
+        console.log('login session starts')
+        let user = await Users.findOne({
+            'email': req.body.email,
+            'password': req.body.password
+        })
+        if (user) {
+            req.login(user, (err) => {
+                if (err) {
+                    throw err
+                } else {
+                    console.log('logged in!')
+                        // after login go to the houses list page
+                    res.redirect('/')
+                }
+            })
         } else {
-            console.log('logged in!')
-                // after login go to the houses list page
-            res.redirect('/')
+            throw new Error('wrong username er/or password')
         }
-    })
+    } catch (err) { next(err) }
 })
 
 router.post('/signup', async(req, res, next) => {
