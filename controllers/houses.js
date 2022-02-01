@@ -81,7 +81,11 @@ router.post('/create', async(req, res, next) => {
         } else {
             console.log('creating house')
             let house = await Houses.create(req.body)
-            if (house) { console.log('house created') }
+            if (house) {
+                console.log('house created')
+                console.log('id: ', house._id)
+                res.redirect('/houses/' + house._id)
+            }
         }
     } catch (err) { next(err) }
 })
