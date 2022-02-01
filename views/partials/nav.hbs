@@ -7,16 +7,25 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 </ul>
+                {{!-- right side buttons user logout login --}}
+                {{#if user}}
                 <form class="d-flex gap-3">
                     <button class="btn btn-outline-success me-2" type="submit">
                         <img src="{{user.avatar}}" class="rounded-circle" style="height: 20px;">
                         {{user.name}}
                     </button>
                 </form>
-                    <a href="/auth/logout">
-                        <button class="btn btn-outline-success">Logout</button>
-                    </a>
+                <a href="/auth/logout">
+                    <button class="btn btn-outline-success">Logout</button>
+                </a>
+                {{else}}
+                    <form class="d-flex gap-3">
+                        <button class="btn btn-outline-secondary me-2" type="submit">Login</button>
+                    </form>
+                {{/if}}
+                {{!-- end of buttons --}}
             </div>
         </div>
     </nav>
 </div>
+
