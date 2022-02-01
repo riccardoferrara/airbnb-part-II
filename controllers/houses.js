@@ -17,24 +17,54 @@ router.get('/create', (req, res, next) => {
     } catch (err) { next(err) }
 })
 
-router.get('/:id', (req, res) => {
-    res.send('houses/one')
+router.get('/:id', (req, res, next) => {
+    try {
+        if (!req.isAuthenticated()) {
+            res.render('auth/login')
+        } else {
+            res.send('houses/one')
+        }
+    } catch (err) { next(err) }
 })
 
 router.get('/:id/edit', (req, res) => {
-    res.render('houses/edit')
+    try {
+        if (!req.isAuthenticated()) {
+            res.render('auth/login')
+        } else {
+            res.render('houses/edit')
+        }
+    } catch (err) { next(err) }
 })
 
 router.post('/', (req, res) => {
-    res.render('houses/list')
+    try {
+        if (!req.isAuthenticated()) {
+            res.render('auth/login')
+        } else {
+            res.render('houses/list')
+        }
+    } catch (err) { next(err) }
 })
 
 router.patch('/:id', (req, res) => {
-    res.send('houses')
+    try {
+        if (!req.isAuthenticated()) {
+            res.render('auth/login')
+        } else {
+            res.send('patch house')
+        }
+    } catch (err) { next(err) }
 })
 
 router.delete('/:id', (req, res) => {
-    res.send('houses')
+    try {
+        if (!req.isAuthenticated()) {
+            res.render('auth/login')
+        } else {
+            res.send('delte house')
+        }
+    } catch (err) { next(err) }
 })
 
 
