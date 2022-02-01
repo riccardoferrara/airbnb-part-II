@@ -27,7 +27,7 @@ router.get('/:id', (req, res, next) => {
     } catch (err) { next(err) }
 })
 
-router.get('/:id/edit', (req, res) => {
+router.get('/:id/edit', (req, res, next) => {
     try {
         if (!req.isAuthenticated()) {
             res.render('auth/login')
@@ -37,7 +37,7 @@ router.get('/:id/edit', (req, res) => {
     } catch (err) { next(err) }
 })
 
-router.post('/', (req, res) => {
+router.post('/', (req, res, next) => {
     try {
         if (!req.isAuthenticated()) {
             res.render('auth/login')
@@ -47,7 +47,7 @@ router.post('/', (req, res) => {
     } catch (err) { next(err) }
 })
 
-router.patch('/:id', (req, res) => {
+router.patch('/:id', (req, res, next) => {
     try {
         if (!req.isAuthenticated()) {
             res.render('auth/login')
@@ -57,7 +57,7 @@ router.patch('/:id', (req, res) => {
     } catch (err) { next(err) }
 })
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', (req, res, next) => {
     try {
         if (!req.isAuthenticated()) {
             res.render('auth/login')
