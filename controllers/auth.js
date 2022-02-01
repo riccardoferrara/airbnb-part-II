@@ -22,8 +22,18 @@ router.get('/signup', (req, res) => {
     res.render('signup')
 })
 
-router.post('/login', (req, res) => {
-    res.send('login')
+router.post('/login', async(req, res, next) => {
+    console.log('login session starts')
+    let user = await req.body
+    req.login(user, (err) => {
+        if (err) {
+            throw err
+        } else {
+            console.log('logged in!')
+                // after login go to the houses list page
+            res.redirect('/houses')
+        }
+    })
 })
 
 router.post('/signup', async(req, res, next) => {
@@ -55,9 +65,28 @@ router.post('/signup', async(req, res, next) => {
 })
 
 
-router.get('/logout', (req, res) => {
-    console.log('user logging out')
-    res.send('logout')
+router.get('/logout', (req, res, next) => {
+    try {
+        console.log('user logging out')
+        req.logout()
+        req.session.destroy(err => {
+            if (err) {
+                next(err)
+            }
+            res.clearCookie('connect.sid')
+                // continue coding here
+        })
+        res.redirect('/login')
+
+    } catch (err) {
+        next(err)
+    }
+
+
 })
+
+
+
+
 
 module.exports = router
