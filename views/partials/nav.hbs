@@ -9,17 +9,19 @@
                 </ul>
                 {{!-- right side buttons user logout login --}}
                 {{#if user}}
-                <form class="d-flex gap-3">
-                    <button class="btn btn-outline-success me-2" type="submit">
-                        <img src="{{user.avatar}}" class="rounded-circle" style="height: 20px;">
-                        {{user.name}}
-                    </button>
-                </form>
-                <a href="/auth/logout">
-                    <button class="btn btn-outline-success">Logout</button>
-                </a>
-                {{else}}
+                    {{!--  name button - logout button --}}
                     <form class="d-flex gap-3">
+                        <button class="btn btn-outline-success me-2" type="submit">
+                            <img src="{{user.avatar}}" class="rounded-circle" style="height: 20px;">
+                            {{user.name}}
+                        </button>
+                    </form>
+                    <a href="/auth/logout">
+                        <button class="btn btn-outline-success">Logout</button>
+                    </a>
+                {{else}}
+                    {{!-- login button --}}
+                    <form class="d-flex gap-3" action="/auth/login"">
                         <button class="btn btn-outline-secondary me-2" type="submit">Login</button>
                     </form>
                 {{/if}}
