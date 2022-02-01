@@ -31,7 +31,7 @@ router.post('/login', async(req, res, next) => {
         } else {
             console.log('logged in!')
                 // after login go to the houses list page
-            res.redirect('/houses')
+            res.redirect('/')
         }
     })
 })
@@ -53,7 +53,7 @@ router.post('/signup', async(req, res, next) => {
                 } else {
                     console.log('logged in!')
                         // after login go to the houses list page
-                    res.redirect('/houses')
+                    res.redirect('/')
                 }
             })
         }
