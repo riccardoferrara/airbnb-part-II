@@ -3,8 +3,13 @@ const express = require('express')
 const router = express.Router()
 
 //Create requests GET / POST
-router.get('/', (req, res) => {
-    res.render('houses/list')
+router.get('/', (req, res, next) => {
+    try {
+        console.log('logged user is: ', req.user)
+        res.render('houses/list', { user: req.user })
+    } catch (err) {
+        next(err)
+    }
 })
 
 router.get('/create', (req, res, next) => {
