@@ -75,18 +75,12 @@ router.get('/logout', (req, res, next) => {
             }
             res.clearCookie('connect.sid')
                 // continue coding here
+            res.redirect('/auth/login')
         })
-        res.redirect('/login')
-
     } catch (err) {
         next(err)
     }
-
-
 })
-
-
-
 
 
 module.exports = router
