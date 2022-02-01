@@ -1,45 +1,45 @@
 {{> nav}}
     <div class="container mb-xl-5">
         <h1>List a house</h1>
-        <form>
+        <form action="/houses/create" method="post">
             <div class="mb-3">
                 <label class="form-label mb-0">Short title</label>
-                <input type="text" class="form-control" required>
+                <input type="text" class="form-control" required name="title">
             </div>
             <div class="mb-3">
                 <label class="form-label mb-0">Description</label>
-                <textarea class="form-control" rows="6" required minlength="100"></textarea>
+                <textarea class="form-control" rows="6" required minlength="100" name="description"></textarea>
             </div>
             <div class="mb-3">
                 <label class="form-label mb-0">Number of rooms</label>
-                <input type="number" class="form-control" required min="2" max="50">
+                <input type="number" class="form-control" required min="2" max="50" name="rooms">
             </div>
             <div class="mb-3">
                 <label class="form-label mb-0">Location</label>
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select" aria-label="Default select example" name="location">
                     <option selected>Palermo</option>
                     <option value="1">Koh Samui</option>
                     <option value="2">Koh Phangan</option>
                   </select>
             </div>
             <div class="mb-3">
-                <label class="form-label mb-0">Price (per night)</label>
+                <label class="form-label mb-0" >Price (per night)</label>
                 <div class="input-group mb-3">
                     <span class="input-group-text">$</span>
-                    <input type="number" class="form-control" required min="1">
+                    <input type="number" class="form-control" required min="1" name="price">
                 </div>
             </div>
             <div class="mb-3">
                 <label class="form-label mb-0">Add Photos (up to 9)</label>
-                <input type="url" class="form-control mb-1" placeholder="https://..." required>
-                <input type="url" class="form-control mb-1" placeholder="https://...">
-                <input type="url" class="form-control mb-1" placeholder="https://...">
-                <input type="url" class="form-control mb-1" placeholder="https://...">
-                <input type="url" class="form-control mb-1" placeholder="https://...">
-                <input type="url" class="form-control mb-1" placeholder="https://...">
-                <input type="url" class="form-control mb-1" placeholder="https://...">
-                <input type="url" class="form-control mb-1" placeholder="https://...">
-                <input type="url" class="form-control mb-1" placeholder="https://...">
+                <input type="url" class="form-control mb-1" placeholder="https://..." required name="photos">
+                <input type="url" class="form-control mb-1" placeholder="https://..." name="photos">
+                <input type="url" class="form-control mb-1" placeholder="https://..." name="photos">
+                <input type="url" class="form-control mb-1" placeholder="https://..." name="photos">
+                <input type="url" class="form-control mb-1" placeholder="https://..." name="photos">
+                <input type="url" class="form-control mb-1" placeholder="https://..." name="photos">
+                <input type="url" class="form-control mb-1" placeholder="https://..." name="photos">
+                <input type="url" class="form-control mb-1" placeholder="https://..." name="photos">
+                <input type="url" class="form-control mb-1" placeholder="https://..." name="photos">
             </div>
             <div class="mb-3">
                 <button class="btn btn-success">Submit</button>

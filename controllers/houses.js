@@ -1,6 +1,8 @@
 // Import Packages
 const express = require('express')
 const router = express.Router()
+const Houses = require('../models/houses')
+
 
 //Create requests GET / POST
 router.get('/', (req, res, next) => {
@@ -72,5 +74,16 @@ router.delete('/:id', (req, res, next) => {
     } catch (err) { next(err) }
 })
 
+router.post('/create', async(req, res, next) => {
+    try {
+        if (!req.isAuthenticated()) {
+            res.render('auth/login')
+        } else {
+            console.log('creating house')
+            let house = await Houses.create(req.body)
+            if (house) { console.log('house created') }
+        }
+    } catch (err) { next(err) }
+})
 
 module.exports = router
