@@ -19,7 +19,7 @@ router.post('/login', (req, res) => {
 router.post('/signup', async(req, res, next) => {
     try {
         let user = await Users.findOne({
-            'email': user.email
+            'email': req.body.email
         })
         if (user) {
             throw new Error('A user with this email is already registered')
