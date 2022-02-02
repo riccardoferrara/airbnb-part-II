@@ -12,7 +12,8 @@
                         <li class="nav-item me-3">
                             <div class="input-group flex-">
                                 <span class="input-group-text" id="basic-addon1">@</span>
-                                <select class="form-select" aria-label="Default select example">
+                                {{!-- location filter --}}
+                                <select class="form-select" aria-label="Default select example" name="location">
                                     <option selected>Any location</option>
                                     <option value="1">Koh Phangan</option>
                                     <option value="2">Koh Samui</option>
@@ -23,7 +24,8 @@
                         <li class="nav-item me-3">
                             <div class="input-group">
                                 <span class="input-group-text" id="basic-addon1">@</span>
-                                <select class="form-select" aria-label="Default select example">
+                                {{!-- rooms filter --}}
+                                <select class="form-select" aria-label="Default select example" name="rooms">
                                     <option selected>Any rooms</option>
                                     <option value="1">1 room</option>
                                     <option value="2">2 rooms</option>
@@ -36,13 +38,15 @@
                         <li class="nav-item me-3">
                             <div class="input-group">
                                 <span class="input-group-text" id="basic-addon1">@</span>
-                                <input type="number" class="form-control" placeholder="max price" aria-label="max_price" aria-describedby="basic-addon1" min="0" max="10000">
+                                {{!-- price filter --}}
+                                <input type="number" class="form-control" placeholder="max price" aria-label="max_price" aria-describedby="basic-addon1" min="0" max="10000" name="price">
                             </div>
                         </li>
                         <li class="nav-item me-3">
                             <div class="input-group">
                                 <span class="input-group-text" id="basic-addon1">@</span>
-                                <select class="form-select" aria-label="Default select example">
+                                {{!-- price sort filter --}}
+                                <select class="form-select" aria-label="Default select example" name="sort">
                                     <option selected>Price (low to high)</option>
                                     <option value="1">Price (high to low)</option>
                                 </select> 

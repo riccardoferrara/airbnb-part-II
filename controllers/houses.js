@@ -9,8 +9,17 @@ router.get('/', async(req, res, next) => {
     try {
         console.log('logged user is: ', req.user)
         console.log('looking for houses in the DB')
-        let houses = await Houses.find({})
-        console.log('found: ', houses)
+        console.log('search filters: ', req.query)
+        let houses
+            // let houses = await Houses.find({})
+        if (req.query.rooms) {
+            houses = await Houses.find({
+                rooms: req.query.rooms
+            })
+        } else {
+            houses = await Houses.find({})
+        }
+        // console.log('found: ', houses)
         res.render('houses/list', { user: req.user, houses: houses })
     } catch (err) {
         next(err)
