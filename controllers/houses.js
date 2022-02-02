@@ -24,12 +24,15 @@ router.get('/create', (req, res, next) => {
     } catch (err) { next(err) }
 })
 
-router.get('/:id', (req, res, next) => {
+router.get('/:id', async(req, res, next) => {
     try {
         if (!req.isAuthenticated()) {
             res.render('auth/login')
         } else {
-            res.send('houses/one')
+            console.log('get house ID: ', req.params.id)
+            let house = await Houses.findById(req.params.id)
+            console.log('house: ', house)
+            res.render('houses/one', { house })
         }
     } catch (err) { next(err) }
 })
