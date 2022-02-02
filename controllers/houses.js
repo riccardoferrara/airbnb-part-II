@@ -7,9 +7,13 @@ const Houses = require('../models/houses')
 //functions
 // del property from obj if value is empty
 const delEmptyProp = (obj) => {
-    let o = Object.fromEntries(Object.entries(obj).filter(([_, v]) => v != ''));
-    return o
+    for (const prop in obj) {
+        if (obj[prop] == '') { delete obj[prop] }
+    }
+    return obj
 }
+
+
 
 
 //Create requests GET / POST
@@ -29,7 +33,7 @@ router.get('/', async(req, res, next) => {
             // execute the query
         let houses = await Houses.find(query).sort(`${req.query.sort}`)
             // render the page
-        res.render('houses/list', { user: req.user, houses: houses })
+        res.render('houses/list', { user: req.user, houses: houses, filters: req.query })
     } catch (err) {
         next(err)
     }
