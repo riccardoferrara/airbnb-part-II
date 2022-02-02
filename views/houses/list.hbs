@@ -5,50 +5,58 @@
         <div class="container">
             <div></div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item me-3">
-                        <div class="input-group flex-">
-                            <span class="input-group-text" id="basic-addon1">@</span>
-                            <select class="form-select" aria-label="Default select example">
-                            <option selected>Any location</option>
-                            <option value="1">Koh Phangan</option>
-                            <option value="2">Koh Samui</option>
-                            <option value="3">Bali</option>
-                        </select> </div>
-                    </li>
-                    <li class="nav-item me-3">
-                        <div class="input-group">
-                            <span class="input-group-text" id="basic-addon1">@</span>
-                            <select class="form-select" aria-label="Default select example">
-                        <option selected>Any rooms</option>
-                        <option value="1">1 room</option>
-                        <option value="2">2 rooms</option>
-                        <option value="3">3 rooms</option>
-                        <option value="4">4 rooms</option>
-                        <option value="5">5 rooms</option>
-                        </select> </div>
-                    </li>
-                    <li class="nav-item me-3">
-                        <div class="input-group">
-                            <span class="input-group-text" id="basic-addon1">@</span>
-                            <input type="number" class="form-control" placeholder="max price" aria-label="max_price" aria-describedby="basic-addon1" min="0" max="10000">
-                        </div>
-                    </li>
-                    <li class="nav-item me-3">
-                        <div class="input-group">
-                            <span class="input-group-text" id="basic-addon1">@</span>
-                            <select class="form-select" aria-label="Default select example">
-                        <option selected>Price (low to high)</option>
-                        <option value="1">Price (high to low)</option>
-                    </select> </div>
-                    </li>
-                </ul>
-                <form class="d-flex gap-3">
-                    <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-                    <input class="form-control me-2" type="search" placeholder="House name..." aria-label="Search">
-                    <button class="btn btn-success" type="submit">Search</button>
 
+                {{!-- form start --}}
+                <form action="/houses" method="get">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item me-3">
+                            <div class="input-group flex-">
+                                <span class="input-group-text" id="basic-addon1">@</span>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Any location</option>
+                                    <option value="1">Koh Phangan</option>
+                                    <option value="2">Koh Samui</option>
+                                    <option value="3">Bali</option>
+                                </select> 
+                            </div>
+                        </li>
+                        <li class="nav-item me-3">
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1">@</span>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Any rooms</option>
+                                    <option value="1">1 room</option>
+                                    <option value="2">2 rooms</option>
+                                    <option value="3">3 rooms</option>
+                                    <option value="4">4 rooms</option>
+                                    <option value="5">5 rooms</option>
+                                </select> 
+                            </div>
+                        </li>
+                        <li class="nav-item me-3">
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1">@</span>
+                                <input type="number" class="form-control" placeholder="max price" aria-label="max_price" aria-describedby="basic-addon1" min="0" max="10000">
+                            </div>
+                        </li>
+                        <li class="nav-item me-3">
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1">@</span>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Price (low to high)</option>
+                                    <option value="1">Price (high to low)</option>
+                                </select> 
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="d-flex gap-3">
+                        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+                        <input class="form-control me-2" type="search" placeholder="House name..." aria-label="Search">
+                        <button class="btn btn-success" type="submit">Search</button>
+                    </div>
                 </form>
+                {{!-- form end --}}
+
             </div>
         </div>
     </nav>
