@@ -19,11 +19,11 @@ router.get('/', async(req, res, next) => {
         console.log('looking for houses in the DB')
         console.log('search filters: ', req.query)
         let query = { location: req.query.location, rooms: req.query.rooms }
-            // if (req.query.price != '') {
-            //     query.price = {
-            //         $gt: req.query.price
-            //     }
-            // }
+        if (req.query.price != '') {
+            query.price = {
+                $lte: req.query.price
+            }
+        }
         query = delEmptyProp(query)
         console.log('cleaned search filters: ', query)
         let houses
