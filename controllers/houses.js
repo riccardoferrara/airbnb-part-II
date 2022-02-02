@@ -3,6 +3,13 @@ const express = require('express')
 const router = express.Router()
 const Houses = require('../models/houses')
 
+//functions
+// del property from obj if value is empty
+const delEmptyProp = (obj) => {
+    let o = Object.fromEntries(Object.entries(obj).filter(([_, v]) => v != ''));
+    return o
+}
+
 
 //Create requests GET / POST
 router.get('/', async(req, res, next) => {
@@ -10,13 +17,12 @@ router.get('/', async(req, res, next) => {
         console.log('logged user is: ', req.user)
         console.log('looking for houses in the DB')
         console.log('search filters: ', req.query)
+        query = delEmptyProp(req.query)
+        console.log('cleaned search filters: ', query)
         let houses
             // let houses = await Houses.find({})
         if (req.query.rooms != 'Any rooms') {
-            houses = await Houses.aggregate([
-                { $match: { rooms: req.query.rooms } },
-                // { $match: { location: req.query.location } }
-            ])
+            houses = await Houses.find(req.query)
         } else {
             houses = await Houses.find({})
         }
