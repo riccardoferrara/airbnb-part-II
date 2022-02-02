@@ -17,15 +17,13 @@ router.get('/', async(req, res, next) => {
         console.log('logged user is: ', req.user)
         console.log('looking for houses in the DB')
         console.log('search filters: ', req.query)
+        query = req.query
+        query.sort = ''
         query = delEmptyProp(req.query)
         console.log('cleaned search filters: ', query)
         let houses
-            // let houses = await Houses.find({})
-        if (req.query.rooms != 'Any rooms') {
-            houses = await Houses.find(req.query)
-        } else {
-            houses = await Houses.find({})
-        }
+        houses = await Houses.find(query)
+
         // console.log('found: ', houses)
         res.render('houses/list', { user: req.user, houses: houses })
     } catch (err) {
