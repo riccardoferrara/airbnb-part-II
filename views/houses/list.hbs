@@ -62,17 +62,19 @@
 
             {{!-- each element --}}
             {{#each houses as |house|}}
-            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
-                <div class="card w-100" style="width: 18rem;">
-                    <img src="{{house.photos.[0]}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-map-marker-alt"></i> {{house.location}} &middot; {{house.rooms}} Rooms</h6>
-                        <h5 class="card-title">{{house.title}}</h5>
-                        <small><i class="fas fa-thumbs-up green"></i> 3 Reviews</small>
-                        <small>${{house.price}}/night</small>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
+                    <div class="card w-100" style="width: 18rem;">
+                        <a href="/houses/{{house._id}}">
+                            <img src="{{house.photos.[0]}}" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-map-marker-alt"></i> {{house.location}} &middot; {{house.rooms}} Rooms</h6>
+                            <h5 class="card-title">{{house.title}}</h5>
+                            <small><i class="fas fa-thumbs-up green"></i> 3 Reviews</small>
+                            <small>${{house.price}}/night</small>
+                        </div>
                     </div>
                 </div>
-            </div>
             {{!-- end each element --}}
             {{/each}}
         </div>
