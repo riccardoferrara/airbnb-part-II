@@ -18,22 +18,21 @@
 
                 <!-- house informations  -->
                 <div class="house_description">
-                    <h1>Luxury Villa in Chaweng</h1>
+                    <h1>{{house.title}}</h1>
                     <i class="fas fa-map-marker-alt green"></i>
-                    <small>Koh Samui 4 Rooms</small>
+                    <small>{{house.location}} {{house.rooms}} Rooms</small>
                     <!-- host avatar -->
                     <div class="host_avatar mt-lg-2">
-                        <div class="avatar_img rounded-circle" style="background-image: url('https://randomuser.me/api/portraits/men/11.jpg');">
+                        <div class="avatar_img rounded-circle" style="background-image: url('{{user.avatar}}');">
                         </div>
                         <div class="avatar_img m-lg-2">
                             <small>hosted by</small>
-                            <h6>Riccardo Ferrara</h3>
+                            <h6>{{user.name}}</h3>
                         </div>
                     </div>
                     <!-- description -->
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                        {{house.description}}
                     </p>
                 </div>
 
@@ -85,7 +84,7 @@
             <!-- send message / book -->
             <div class="col">
                 <div class="send_message">
-                    <h3>$350/night</h3>
+                    <h3>${{house.price}}/night</h3>
                     <small>0 Reviews</small>
                     <form action="">
                         <textarea class="form-control" aria-label="With textarea" placeholder="Send the host a message..." rows="5"></textarea>
