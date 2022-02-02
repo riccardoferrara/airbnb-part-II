@@ -13,9 +13,9 @@ router.get('/', async(req, res, next) => {
         let houses
             // let houses = await Houses.find({})
         if (req.query.rooms) {
-            houses = await Houses.find({
-                rooms: req.query.rooms
-            })
+            houses = await Houses.aggregate([
+                { $match: { rooms: req.query.rooms } }
+            ])
         } else {
             houses = await Houses.find({})
         }
