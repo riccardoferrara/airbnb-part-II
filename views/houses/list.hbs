@@ -7,14 +7,14 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                 {{!-- form start --}}
-                <form action="/houses" method="get">
+                <form action="/houses" method="get" class="d-flex ">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item me-3">
                             <div class="input-group flex-">
                                 <span class="input-group-text" id="basic-addon1">@</span>
                                 {{!-- location filter --}}
                                 <select class="form-select" aria-label="Default select example" name="location">
-                                    <option value="">Any location</option>
+                                    <option selected value="">Any location</option>
                                     <option>Koh Phangan</option>
                                     <option>Koh Samui</option>
                                     <option>Bali</option>
@@ -26,7 +26,7 @@
                                 <span class="input-group-text" id="basic-addon1">@</span>
                                 {{!-- rooms filter --}}
                                 <select class="form-select" aria-label="Default select example" name="rooms">
-                                    <option  value="">Any rooms</option>
+                                    <option selected value="">Any rooms</option>
                                     <option value="1">1 room</option>
                                     <option value="2">2 rooms</option>
                                     <option value="3">3 rooms</option>
@@ -47,15 +47,15 @@
                                 <span class="input-group-text" id="basic-addon1">@</span>
                                 {{!-- price sort filter --}}
                                 <select class="form-select" aria-label="Default select example" name="sort">
-                                    <option selected>Price (low to high)</option>
-                                    <option value="1">Price (high to low)</option>
+                                    <option selected value="price">Price (low to high)</option>
+                                    <option value="-price">Price (high to low)</option>
                                 </select> 
                             </div>
                         </li>
                     </ul>
                     <div class="d-flex gap-3">
                         <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-                        <input class="form-control me-2" type="search" placeholder="House name..." aria-label="Search">
+                        <input class="form-control me-2" tpe="search" placeholder="House name..." aria-label="Search">
                         <button class="btn btn-success" type="submit">Search</button>
                     </div>
                 </form>

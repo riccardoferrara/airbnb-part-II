@@ -15,19 +15,15 @@ const delEmptyProp = (obj) => {
 //Create requests GET / POST
 router.get('/', async(req, res, next) => {
     try {
+        let query = delEmptyProp(req.query)
+        delete query.sort
+        query.price ? query.price = { $lte: req.query.price } : null
         console.log('logged user is: ', req.user)
-        console.log('looking for houses in the DB')
-        console.log('search filters: ', req.query)
-        let query = { location: req.query.location, rooms: req.query.rooms }
-        if (req.query.price != '') {
-            query.price = {
-                $lte: req.query.price
-            }
-        }
-        query = delEmptyProp(query)
+        console.log('looking for houses in the DB...')
+        console.log('search filters (all): ', req.query)
         console.log('cleaned search filters: ', query)
-        let houses
-        houses = await Houses.find(query)
+        console.log('price sort: ', `${req.query.sort}`)
+        let houses = await Houses.find(query).sort(`${req.query.sort}`)
 
         // console.log('found: ', houses)
         res.render('houses/list', { user: req.user, houses: houses })
