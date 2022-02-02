@@ -1,41 +1,17 @@
-{{> nav}}
-<p>{{house.title}}</p>
-<!-- end header -->
+{{> nav }}
 <!-- start house pictures -->
-<div class="row border border-light">
-    <div class="d-flex m-auto col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-md-3 mb-sm-3 mb-xs-2">
-        <img class="img-fluid border-0 p-0" src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png">
-    </div>
-    <div class="col d-flex m-auto">
-        <div class="row row-cols-3">
-            <div class="col">
-                <img class="img-thumbnail border-0" src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png">
-            </div>
-            <div class="col">
-                <img class="img-thumbnail border-0" src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_02.png">
-            </div>
-            <div class="col">
-                <img class="img-thumbnail border-0" src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_03.png">
-            </div>
-            <div class="col">
-                <img class="img-thumbnail border-0" src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_04.png">
-            </div>
-            <div class="col">
-                <img class="img-thumbnail border-0" src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_05.png">
-            </div>
-            <div class="col">
-                <img class="img-thumbnail border-0" src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_06.png">
-            </div>
-            <div class="col">
-                <img class="img-thumbnail border-0" src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_07.png">
-            </div>
-            <div class="col">
-                <img class="img-thumbnail border-0" src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_08.png">
-            </div>
-            <div class="col">
-                <img class="img-thumbnail border-0" src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_09.png">
-            </div>
-        </div>
+<div class="house_pics">
+    <div class="main_img" style="background-image: url('https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png')"></div>
+    <div class="house_thumbnails">
+        <div class="house_thumbnail" style="background-image: url( 'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png'); "></div>
+        <div class="house_thumbnail" style="background-image: url( 'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_02.png'); "></div>
+        <div class="house_thumbnail" style="background-image: url( 'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_03.png'); "></div>
+        <div class="house_thumbnail" style="background-image: url( 'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_04.png'); "></div>
+        <div class="house_thumbnail" style="background-image: url( 'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_05.png'); "></div>
+        <div class="house_thumbnail" style="background-image: url( 'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_06.png'); "></div>
+        <div class="house_thumbnail" style="background-image: url( 'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_07.png'); "></div>
+        <div class="house_thumbnail" style="background-image: url( 'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_08.png'); "></div>
+        <div class="house_thumbnail" style="background-image: url( 'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_09.png'); "></div>
     </div>
 </div>
 <!-- end house pictures -->
@@ -85,7 +61,7 @@
                 <div class="review mt-lg-4 p-3">
                     <!-- guest avatar -->
                     <div class="host_avatar mt-lg-2">
-                        <div class="avatar_img rounded-circle" style="background-image: url('https://randomuser.me/api/portraits/men/11.jpg');">
+                        <div class="avatar_img circular--square" style="background-image: url('https://randomuser.me/api/portraits/men/11.jpg');">
                         </div>
                         <div class="avatar_img m-lg-2">
                             <small>19 Jan 2022</small>
@@ -99,7 +75,7 @@
                 <div class="review mt-lg-4 p-3">
                     <!-- guest avatar -->
                     <div class="host_avatar mt-lg-2">
-                        <div class="avatar_img rounded-circle" style="background-image: url('https://randomuser.me/api/portraits/men/11.jpg');">
+                        <div class="avatar_img circular--square" style="background-image: url('https://randomuser.me/api/portraits/men/11.jpg');">
                         </div>
                         <div class="avatar_img m-lg-2">
                             <small>19 Jan 2022</small>
