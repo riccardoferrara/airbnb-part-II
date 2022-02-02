@@ -1,17 +1,11 @@
 {{> nav }}
 <!-- start house pictures -->
 <div class="house_pics">
-    <div class="main_img" style="background-image: url('https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png')"></div>
+    <div class="main_img" style="background-image: url('{{house.photos.[0]}}')"></div>
     <div class="house_thumbnails">
-        <div class="house_thumbnail" style="background-image: url( 'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png'); "></div>
-        <div class="house_thumbnail" style="background-image: url( 'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_02.png'); "></div>
-        <div class="house_thumbnail" style="background-image: url( 'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_03.png'); "></div>
-        <div class="house_thumbnail" style="background-image: url( 'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_04.png'); "></div>
-        <div class="house_thumbnail" style="background-image: url( 'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_05.png'); "></div>
-        <div class="house_thumbnail" style="background-image: url( 'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_06.png'); "></div>
-        <div class="house_thumbnail" style="background-image: url( 'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_07.png'); "></div>
-        <div class="house_thumbnail" style="background-image: url( 'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_08.png'); "></div>
-        <div class="house_thumbnail" style="background-image: url( 'https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_09.png'); "></div>
+        {{#each house.photos as |photo|}}
+            <div class="house_thumbnail" style="background-image: url('{{photo}}'); "></div>
+        {{/each}}
     </div>
 </div>
 <!-- end house pictures -->
