@@ -3,6 +3,7 @@ const express = require('express')
 const { update } = require('../models/users')
 const router = express.Router()
 const Users = require('../models/users')
+const Houses = require('../models/houses')
 
 // Functions
 const loginOrErr = (req, res, user) => {
@@ -17,14 +18,17 @@ const loginOrErr = (req, res, user) => {
 }
 
 //Create requests GET / POST
-router.get('/', (req, res, next) => {
+router.get('/', async(req, res, next) => {
     try {
         if (!req.isAuthenticated()) {
             res.render('auth/login')
         } else {
             let user = req.user
             console.log('logged user: ', user)
-            res.render('profile', { user })
+                // find all houses listet by the user
+            let houses = await Houses.find({ host: req.user._id })
+            console.log('houses: ', houses)
+            res.render('profile', { user, houses })
         }
     } catch (err) { next(err) }
 })
