@@ -42,7 +42,7 @@ router.get('/', async(req, res, next) => {
 router.get('/create', (req, res, next) => {
     try {
         if (!req.isAuthenticated()) {
-            res.render('auth/login')
+            res.redirect('auth/login')
         } else {
             console.log('logged user: ', req.user)
             res.render('houses/create', { user: req.user })
@@ -53,7 +53,7 @@ router.get('/create', (req, res, next) => {
 router.get('/:id', async(req, res, next) => {
     try {
         if (!req.isAuthenticated()) {
-            res.render('auth/login')
+            res.redirect('auth/login')
         } else {
             console.log('get house ID: ', req.params.id)
             let house = await Houses.findById(req.params.id).populate('host')
@@ -66,7 +66,7 @@ router.get('/:id', async(req, res, next) => {
 router.get('/:id/edit', (req, res, next) => {
     try {
         if (!req.isAuthenticated()) {
-            res.render('auth/login')
+            res.redirect('auth/login')
         } else {
             res.render('houses/edit')
         }
@@ -76,7 +76,7 @@ router.get('/:id/edit', (req, res, next) => {
 router.post('/', (req, res, next) => {
     try {
         if (!req.isAuthenticated()) {
-            res.render('auth/login')
+            res.redirect('auth/login')
         } else {
             res.render('houses/list')
         }
@@ -86,7 +86,7 @@ router.post('/', (req, res, next) => {
 router.patch('/:id', (req, res, next) => {
     try {
         if (!req.isAuthenticated()) {
-            res.render('auth/login')
+            res.redirect('auth/login')
         } else {
             res.send('patch house')
         }
@@ -96,7 +96,7 @@ router.patch('/:id', (req, res, next) => {
 router.delete('/:id', (req, res, next) => {
     try {
         if (!req.isAuthenticated()) {
-            res.render('auth/login')
+            res.redirect('auth/login')
         } else {
             res.send('delte house')
         }
@@ -106,7 +106,7 @@ router.delete('/:id', (req, res, next) => {
 router.post('/create', async(req, res, next) => {
     try {
         if (!req.isAuthenticated()) {
-            res.render('auth/login')
+            res.redirect('auth/login')
         } else {
             console.log('creating house')
             req.body.host = req.user._id
