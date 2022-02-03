@@ -7,7 +7,7 @@
         <div class="col-3">
             <h1>Profile</h1>
             <hr>
-            <form>
+            <form action="/profile?_method=patch" method="post">
                 <div class="mb-3">
                     <label class="form-label mb-0">Name</label>
                     <input type="text" class="form-control" value="{{user.name}}" name="name">
