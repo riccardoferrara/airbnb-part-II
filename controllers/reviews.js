@@ -6,7 +6,7 @@ const router = express.Router()
 router.post('/', (req, res, next) => {
     try {
         if (!req.isAuthenticated()) {
-            res.render('auth/login')
+            res.redirect('auth/login')
         } else {
             res.send('reviews')
         }
