@@ -57,7 +57,7 @@ router.get('/:id', async(req, res, next) => {
             console.log('get house ID: ', req.params.id)
             let house = await Houses.findById(req.params.id).populate('host')
             console.log('house: ', house)
-            res.render('houses/one', { house, user: req.user })
+            res.render('houses/one', { house })
         }
     } catch (err) { next(err) }
 })
