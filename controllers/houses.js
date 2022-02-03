@@ -108,6 +108,7 @@ router.post('/create', async(req, res, next) => {
             res.render('auth/login')
         } else {
             console.log('creating house')
+            req.body.host = req.user._id
             let house = await Houses.create(req.body)
             if (house) {
                 console.log('house created')
