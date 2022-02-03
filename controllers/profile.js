@@ -21,11 +21,12 @@ const loginOrErr = (req, res, user) => {
 router.get('/', async(req, res, next) => {
     try {
         if (!req.isAuthenticated()) {
-            res.render('auth/login')
+            res.redirect('auth/login')
         } else {
             let user = req.user
             console.log('logged user: ', user)
                 // find all houses listet by the user
+            console.log('user ID:', req.user._id)
             let houses = await Houses.find({ host: req.user._id })
             console.log('houses: ', houses)
             res.render('profile', { user, houses })
@@ -37,7 +38,7 @@ router.patch('/', async(req, res, next) => {
     try {
         if (!req.isAuthenticated()) {
             console.log('not logged')
-            res.render('auth/login')
+            res.redirect('auth/login')
         } else {
             console.log('patching user informations')
                 // user info from update request
