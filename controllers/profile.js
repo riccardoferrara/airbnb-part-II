@@ -8,7 +8,9 @@ router.get('/', (req, res, next) => {
         if (!req.isAuthenticated()) {
             res.render('auth/login')
         } else {
-            res.render('profile')
+            let user = req.user
+            console.log('logged user: ', user)
+            res.render('profile', { user })
         }
     } catch (err) { next(err) }
 })
