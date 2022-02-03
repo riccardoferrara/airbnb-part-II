@@ -44,7 +44,8 @@ router.get('/create', (req, res, next) => {
         if (!req.isAuthenticated()) {
             res.render('auth/login')
         } else {
-            res.render('houses/create')
+            console.log('logged user: ', req.user)
+            res.render('houses/create', { user: req.user })
         }
     } catch (err) { next(err) }
 })
