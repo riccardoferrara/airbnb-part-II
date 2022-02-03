@@ -49,7 +49,9 @@
                                     <small class="text-secondary">{{house.rooms}} rooms &middot; ${{house.price}}/night</small>
                                     <p class="card-text">{{house.description}}
                                     </p>
-                                    <button class="btn btn-outline-secondary" type="submit">Edit</button>
+                                        <a href="/houses/{{house.id}}/edit">
+                                            <button class="btn btn-outline-secondary" type="submit">Edit</button>
+                                        </a>
                                     <a href="/houses/{{house.id}}">
                                         <button class="btn btn-outline-success" type="submit">View</button>
                                     </a>
