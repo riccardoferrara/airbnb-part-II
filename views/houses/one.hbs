@@ -4,7 +4,7 @@
     <div class="main_img" style="background-image: url('{{house.photos.[0]}}')"></div>
     <div class="house_thumbnails">
         {{#each house.photos as |photo|}}
-            <div class="house_thumbnail" style="background-image: url('{{photo}}'); " onclick="updateMainPhoto()"></div>
+            <div class="house_thumbnail" style="background-image: url('{{photo}}'); " onclick="updateMainPhoto(this)"></div>
         {{/each}}
     </div>
 </div>
