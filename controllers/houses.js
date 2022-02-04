@@ -63,12 +63,15 @@ router.get('/:id', async(req, res, next) => {
     } catch (err) { next(err) }
 })
 
-router.get('/:id/edit', (req, res, next) => {
+router.get('/:id/edit', async(req, res, next) => {
     try {
         if (!req.isAuthenticated()) {
             res.redirect('auth/login')
         } else {
-            res.render('houses/edit')
+            console.log('editing house: ', req.params.id)
+            let house = await Houses.findById(req.params.id).populate('host')
+            console.log('house: ', house)
+            res.render('houses/edit', { house })
         }
     } catch (err) { next(err) }
 })
