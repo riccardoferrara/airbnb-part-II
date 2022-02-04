@@ -40,17 +40,26 @@ router.patch('/', async(req, res, next) => {
             console.log('not logged')
             res.redirect('auth/login')
         } else {
-            console.log('patching user informations')
+            console.log('patching user informations...')
                 // user info from update request
             updated_user = req.body
-            console.log('updated user: ', updated_user)
+            console.log('want to uptade user information as following: ', updated_user)
                 // update database
-            users = await Users.findOneAndUpdate(updated_user)
+            let user = await Users.findByIdAndUpdate(req.user._id, req.body, { new: true })
+            console.log('user information updated! \n')
                 // login out user and login with new values
-            req.logout()
-            loginOrErr(req, res, updated_user)
-            console.log('after update logged user is: ', req.user)
-            res.redirect('profile')
+            req.login(user, (err) => {
+                    if (err) {
+                        throw err
+                    } else {
+                        console.log('logged in!')
+                            // after login go to the houses list page
+                    }
+                })
+                // end login 
+            console.log('user logged in: ', req.user)
+                // res.redirect('profile')
+            res.redirect('/profile')
         }
     } catch (err) { next(err) }
 })
