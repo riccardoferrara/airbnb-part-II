@@ -10,13 +10,13 @@
                 {{!-- right side buttons user logout login --}}
                 {{#if user}}
                     {{!--  name button - logout button --}}
-                    <form class="d-flex gap-3">
-                        <a href="/profile">
+                    <form class="d-flex gap-3" action="/profile">
+                        {{!-- <a href="/profile"> --}}
                             <button class="btn btn-outline-success me-2" type="submit">
                                 <img src="{{user.avatar}}" class="rounded-circle" style="height: 20px;">
                                 {{user.name}}
                             </button>
-                        </a>
+                        {{!-- </a> --}}
                     </form>
                     <a href="/auth/logout">
                         <button class="btn btn-outline-success">Logout</button>
